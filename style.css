@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+}
+
+input:read-only {
+    cursor: not-allowed;
+    font-weight: bold;
+    border: none;
+    color: #4CAF50;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #eee;
+    cursor: not-allowed;
+}
+
+.questao {
+    margin-top: 20px;
+    font-size: 18px;
+    background: #f2f2f2;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 800px;
+    margin: 20px auto;
+}
+.questao li {
+    list-style: none;
+    color: #4c60af;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.questao li:before {
+    content: "\21D2";
+    margin-right: 10px;
+}
