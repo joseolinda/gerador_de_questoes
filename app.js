@@ -20,12 +20,12 @@ getQuestionButton.onclick = (e) => {
             + `<p>Boa noite <b>${aluno.nome}</b>. Essa é sua avaliação de Programação Web I.</p>`
             + "<p>Instruções:</p>"
             + "<ol>"
-            + "<li>A avaliação é individual e sem consulta.</li>"
-            + "<li>A avaliação deve ser feita em até às 21h50.</li>"
+            + "<li>A atividade é individual e sem consulta.</li>"
+            + "<li>A atividade deve ser feita em até às 21h50.</li>"
             + "<li>Cria a aplicação direcionada a você usando Flask.</li>"
             + "<li>A aplicação deve conter uma página inicial com um menu de navegação e todas as rotas devem ser acessadas a partir do menu.</li>"
             + "<li>Ao final, gere o arquivo requirements.txt e envie todo o projeto para um repositório no GitHub.</li>"
-            + "<li>Envie o link do repositório no GitHub na atividade <strong>[N1 - Avaliação Prática]</strong> no Google Classroom.</li>"
+            + "<li>Envie o link do repositório no GitHub na atividade <strong>[Prática 04]</strong> no Google Classroom.</li>"
             + "</ol>"
             + "</div>"
     } else {
