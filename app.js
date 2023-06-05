@@ -13,52 +13,48 @@ getQuestionButton.onclick = (e) => {
         result.innerHTML = "Matrícula inválida. Tente novamente."
         return
     }
-
+    result.innerHTML = ""
     const aluno = alunos.find(aluno => aluno.matricula == number)
     if (aluno) {
-        result.innerHTML = `Boa noite <b>${aluno.nome}</b>. Essa é sua avaliação de Programação Web I.`
-        result.innerHTML += "<br>"
-        result.innerHTML += "<br>"
-        result.innerHTML += "Instruções:"
-        result.innerHTML += "<br>"
-        result.innerHTML += "1. A avaliação é individual e sem consulta."
-        result.innerHTML += "<br>"
-        result.innerHTML += "2. A avaliação deve ser feita em até às 21h50."
-        result.innerHTML += "<br>"
-        result.innerHTML += "3. Cria a aplicação direcionada a voccê usando Flask."
-        result.innerHTML += "<br>"
-        result.innerHTML += "4. A aplicação deve conter uma página inicial com um menu de navegação e todas as rotas devem ser acessadas a partir do menu."
-        result.innerHTML += "<br>"
-        result.innerHTML += "5. Ao final, gere o arquivo requirements.txt e envie todo o projeto para um repositório no GitHub."
-        result.innerHTML += "<br>"
-        result.innerHTML += "6. Envie o link do repositório no GitHub na atividade [N1 - Avaliação Prática] no Google Classroom."
-        result.innerHTML += "<br>"
-        result.innerHTML += "<hr>"
+        result.innerHTML += `<div class="card">`
+            + `<p>Boa noite <b>${aluno.nome}</b>. Essa é sua avaliação de Programação Web I.</p>`
+            + "<p>Instruções:</p>"
+            + "<ol>"
+            + "<li>A avaliação é individual e sem consulta.</li>"
+            + "<li>A avaliação deve ser feita em até às 21h50.</li>"
+            + "<li>Cria a aplicação direcionada a você usando Flask.</li>"
+            + "<li>A aplicação deve conter uma página inicial com um menu de navegação e todas as rotas devem ser acessadas a partir do menu.</li>"
+            + "<li>Ao final, gere o arquivo requirements.txt e envie todo o projeto para um repositório no GitHub.</li>"
+            + "<li>Envie o link do repositório no GitHub na atividade <strong>[N1 - Avaliação Prática]</strong> no Google Classroom.</li>"
+            + "</ol>"
+            + "</div>"
     } else {
-        result.innerHTML = "Matrícula não encontrada. Tente novamente."
+        result.innerHTML = `<div class="card">Matrícula não encontrada. Tente novamente.</div>`
         return
     }
 
     const questao = questoes.find(questao => questao.codigo == number.slice(-1))
 
     if (questao) {
-        result.innerHTML += `Questão ${questao.codigo + 1}: ${questao.titulo}`
-        result.innerHTML += "<hr>"
-        result.innerHTML += questao.descricao
-        result.innerHTML += "<hr>"
-        result.innerHTML += "Rotas obrigatórias:"
-        result.innerHTML += "<br>"
-        result.innerHTML += "<ul>"
+        let qestao_html = `<div class="card">`
+            + `<h3>${questao.titulo}</h3>`
+            + "<p>"
+            + questao.descricao
+            + "</p>"
+            + "<h4>Rotas obrigatórias:</h4>"
+            + "<ul>"
         for (const rota of questao.rotas) {
-            result.innerHTML += `<li>${rota}</li>`
+            qestao_html += `<li>${rota}</li>`
         }
-        result.innerHTML += "</ul>"
+        qestao_html += "</ul></div>"
+
+        result.innerHTML += qestao_html
 
         getQuestionButton.disabled = true
         matriculaInput.readOnly = true
 
     } else {
-        result.innerHTML = "Questão não encontrada. Tente novamente."
+        result.innerHTML = `<div class="card">Questão não encontrada. Tente novamente.</div>`
         return 
     }
 }
