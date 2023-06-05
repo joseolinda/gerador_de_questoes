@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 20px;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: #fff;
 }
 
 h1 {
@@ -48,7 +48,7 @@ button:disabled {
   text-align: left;
   max-width: 800px;
   margin: 20px auto;
-  box-shadow: -6px 6px 8px rgba(0, 0, 0, 0.1), 2px 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .questao .card {
